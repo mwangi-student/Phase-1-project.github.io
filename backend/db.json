@@ -69,6 +69,13 @@
       "username": "kamau",
       "email": "kamau@gmail.com",
       "password": "12345"
+    },
+    {
+      "username": "kariuki",
+      "email": "kariuki@gmail.com",
+      "password": "123456",
+      "avatar": "https://api.dicebear.com/6.x/initials/svg?seed=ka&backgroundColor=random",
+      "id": "tdEk_PB"
     }
   ]
 }
