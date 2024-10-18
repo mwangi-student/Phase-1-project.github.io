@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EM PLANNERS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./style.css" rel="stylesheet">
+</head>
+
+<body>
+    <header class="container-fluid" mb-4>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" width="50%" height="20%">
+            <a class="navbar-brand" href="#home">
+                <img src="./assets/images/logo2.png" alt="" width="50%" height="30%">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse align-content-between" id="navbarNav">
+                <ul class="navbar-nav ms-auto justify-content-center">
+                    <li class="nav-item"><a class="nav-link" href="#home">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonials">TESTIMONIALS</a></li>
+                    <li class="nav-item"><a href="#signupModal" class="btn btn-primary btn-lg"
+                            data-bs-target="#signupModal" data-bs-toggle="modal" id="signupButton">GET STARTED</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="container-fluid text-center bg-dark text-white py-5 mt-5"
+            style="background: url('./assets/images/hero-bg.jpg') no-repeat center center; background-size: cover;">
+            <div class="container py-5">
+                <h1 class="display-4">Welcome to EM PLANNERS</h1>
+                <p class="lead">Effortlessly Manage Your Events</p>
+                <a href="#signupModal" class="btn btn-lg btn-primary mt-3" data-bs-toggle="modal">Get Started Now</a>
+            </div>
+        </section>
+
+        <!-- Why Us Section -->
+        <section id="why-us" class="container my-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>WHY US</h2>
+                    <p>EM PLANNERS is a powerful event management platform designed to simplify the process of
+                        organizing and tracking events. Whether you're planning a conference, workshop, or social
+                        gathering, our intuitive interface and robust features make it easy to create, manage, and
+                        monitor your events efficiently.</p>
+                </div>
+                <div class="col-md-6">
+                    <img src="./assets/images/plan1.png" alt="Event Planning" class="img-fluid">
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="text-center mb-5">
+            <h2>OUR FEATURES</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="./assets/images/create.png" alt="Feature 1" width="80%" height="50%">
+                    <h3>Easy Event Creation</h3>
+                </div>
+                <div class="col-md-4">
+                    <img src="./assets/images/attendance.png" alt="Feature 2" width="80%" height="50%">
+                    <h3>Attendee Management</h3>
+                </div>
+                <div class="col-md-4">
+                    <img src="./assets/images/updates.png" alt="Feature 3" width="80%" height="50%">
+                    <h3>Real-time Updates</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="container py-5">
+            <h2 class="text-center mb-5">What Our Clients Say</h2>
+            <div class="row text-center justify-content-center">
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="testimonial p-4 border rounded shadow-sm">
+                        <img src="./assets/images/mwangi.jpg" class="img-fluid rounded-circle mb-3" alt="John Mwangi">
+                        <p>"EM PLANNERS made planning our corporate conference a breeze. The efficiency and simplicity
+                            are unmatched!"</p>
+                        <p class="font-weight-bold">- John Mwangi</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="testimonial p-4 border rounded shadow-sm">
+                        <img src="./assets/images/mwangi.jpg" class="img-fluid rounded-circle mb-3" alt="Sarah Smith">
+                        <p>"EM PLANNERS brought order and creativity to our workshops. Everything ran like clockwork."
+                        </p>
+                        <p class="font-weight-bold">- Sarah Smith</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal Structure -->
+        <div id="loginModal" class="modal fade" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content p-4">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Login</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="loginForm">
+                            <div class="mb-3">
+                                <input type="email" class="form-control" id="loginEmail" name="email" required
+                                    placeholder="Email">
+                            </div>
+                            <div class="mb-3">
+                                <input type="password" class="form-control" id="loginPassword" name="password" required
+                                    placeholder="Password">
+                            </div>
+                            <p>Don't have an account? <a href="#" id="goToSignup" data-bs-toggle="modal"
+                                    data-bs-target="#signupModal">Sign up</a></p>
+                            <button type="submit" class="btn btn-primary w-100">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="signupModal" class="modal fade" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content p-4">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Sign Up</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="signupForm">
+                            <div class="mb-3">
+                                <input type="text" class="form-control" id="signupName" name="name" required
+                                    placeholder="Username">
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control" id="signupEmail" name="email" required
+                                    placeholder="Email">
+                            </div>
+                            <div class="mb-3">
+                                <input type="password" class="form-control" id="signupPassword" name="password" required
+                                    placeholder="Password">
+                            </div>
+                            <p>Already have an account? <a href="#" id="goToLogin" data-bs-toggle="modal"
+                                    data-bs-target="#loginModal">Login</a></p>
+                            <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="container-fluid bg-light py-3">
+        <p class="text-center">&copy; 2024 EM PLANNERS. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/app.js"></script>
+</body>
+
+</html>

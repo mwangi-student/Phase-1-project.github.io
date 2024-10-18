@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - EM PLANNERS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./style.css" rel="stylesheet">
+</head>
+
+<body>
+    <header class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">
+                <img src="./assets/images/logo2.png" alt="" width="50%" height="30%">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a href="./index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
+                    <li class="nav-item"><a href="#" class="btn btn-danger" id="logoutButton">Log Out</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mt-5">
+        <h1 class="text-center mb-4">Welcome, [User's Name]</h1>
+        <div class="row text-center justify-content-center mb-5">
+            <!-- Create Event Button -->
+            <div class="col-md-4 mb-4">
+                <button class="btn btn-primary btn-lg w-100" id="createEventButton" data-bs-toggle="modal"
+                    data-bs-target="#createEventModal">
+                    <i class="bi bi-journal-plus"></i>
+                    <h3>Create Event</h3>
+                </button>
+            </div>
+
+            <!-- Notifications Button -->
+            <div class="col-md-4 mb-4">
+                <button class="btn btn-warning btn-lg w-100" id="notificationsButton">
+                    <i class="bi bi-bell"></i>
+                    <h3>Notifications</h3>
+                </button>
+            </div>
+
+            <!-- Settings Button -->
+            <div class="col-md-4 mb-4">
+                <button class="btn btn-info btn-lg w-100" id="settingsButton">
+                    <i class="bi bi-gear"></i>
+                    <h3>Settings</h3>
+                </button>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Date</th>
+                        <th>Location</th>
+                        <th>Time</th>
+                        <th>Description</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="eventsContainer">
+                    <!-- Event rows will be inserted here by JavaScript -->
+                    <!-- <tr>
+                        <td>Team Building Workshop</td>
+                        <td>2024-06-15</td>
+                        <td>Company Office</td>
+                        <td>09:00</td>
+                        <td>Annual team building event for all employees</td>
+
+                        <td><button onclick="viewPost(${event.id})" class="btn btn-info btn-sm">View</button>
+                        </td>
+                        <td><button onclick="deletePost(${event.id})" class="btn btn-danger btn-sm">Delete</buton>
+                        </td>
+                    </tr> -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Create Event Modal -->
+    <div class="modal fade" id="createEventModal" tabindex="-1" aria-labelledby="createEventModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="createEventModalLabel">Create New Event</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="createEventForm">
+                        <div class="mb-3">
+                            <label for="eventName" class="form-label">Event Name</label>
+                            <input type="text" class="form-control" id="eventName" name="eventName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="eventDate" class="form-label">Event Date</label>
+                            <input type="date" class="form-control" id="eventDate" name="eventDate" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="eventLocation" class="form-label">Event Location</label>
+                            <input type="text" class="form-control" id="eventLocation" name="eventLocation" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="eventDescription" class="form-label">Event Description</label>
+                            <textarea class="form-control" id="eventDescription" name="eventDescription"
+                                rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Edit Event Modal -->
+    <div class="modal fade" id="editEventModal" tabindex="-1" aria-labelledby="editEventModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editEventModalLabel">Edit Event</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editEventForm">
+                        <!-- Hidden input to store event ID -->
+                        <input type="hidden" id="editEventId">
+
+                        <div class="mb-3">
+                            <label for="editEventName" class="form-label">Event Name</label>
+                            <input type="text" class="form-control" id="editEventName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editEventDate" class="form-label">Event Date</label>
+                            <input type="date" class="form-control" id="editEventDate" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editEventTime" class="form-label">Event Time</label>
+                            <input type="time" class="form-control" id="editEventTime">
+                        </div>
+                        <div class="mb-3">
+                            <label for="editEventLocation" class="form-label">Event Location</label>
+                            <input type="text" class="form-control" id="editEventLocation" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editEventDescription" class="form-label">Event Description</label>
+                            <textarea class="form-control" id="editEventDescription" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <footer class="container-fluid bg-light py-3">
+        <p class="text-center">&copy; 2024 EM PLANNERS. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/dash.js"></script>
+</body>
+
+</html>

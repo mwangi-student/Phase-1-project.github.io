@@ -1,0 +1,79 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "mwangi",
+      "email": "mwangi@example.com",
+      "password": "password123",
+      "avatar": "https://api.dicebear.com/6.x/initials/svg?seed=MB&backgroundColor=random",
+      "events": [
+        {
+          "id": "1",
+          "name": "Team Building Workshop",
+          "date": "2024-06-15",
+          "time": "09:00",
+          "location": "Company Office",
+          "description": "Annual team building event for all employees",
+          "reminder": true
+        }
+      ],
+      "notifications": [
+        {
+          "id": "1",
+          "message": "Reminder: Team Building Workshop is tomorrow!",
+          "read": false
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "username": "jane",
+      "email": "jane@example.com",
+      "password": "mypassword",
+      "avatar": "https://api.dicebear.com/6.x/initials/svg?seed=JD&backgroundColor=random",
+      "events": [
+        {
+          "id": "2",
+          "name": "Product Launch",
+          "date": "2024-07-20",
+          "time": "14:00",
+          "location": "Convention Center",
+          "description": "Launch event for our new product line",
+          "reminder": true
+        }
+      ],
+      "notifications": [
+        {
+          "id": "2",
+          "message": "Your event 'Product Launch' has been created successfully.",
+          "read": false
+        }
+      ]
+    },
+    {
+      "id": "0310",
+      "username": "Shirleen",
+      "email": "shirleen@example.com",
+      "password": "shirleenpass",
+      "avatar": "https://api.dicebear.com/6.x/initials/svg?seed=Sh",
+      "events": [],
+      "notifications": []
+    },
+    {
+      "id": "52e1",
+      "username": "abujubuju",
+      "email": "abujubuju@example.com",
+      "password": "abujubupass",
+      "avatar": "https://api.dicebear.com/6.x/initials/svg?seed=ab",
+      "events": [],
+      "notifications": []
+    },
+    {
+      "id": "6be8",
+      "username": "kamau",
+      "email": "kamau@gmail.com",
+      "password": "12345",
+      "avatar": "https://api.dicebear.com/6.x/initials/svg?seed=ka&backgroundColor=random"
+    }
+  ]
+}
