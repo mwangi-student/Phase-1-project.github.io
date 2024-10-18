@@ -102,4 +102,4 @@ To view or modify this project locally, follow these steps:
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the [MIT](https://github.com/mwangi-student/Phase-1-project.github.io/blob/main/License.md) License.

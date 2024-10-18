@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function fetchEvents() {
-  fetch("http://localhost:3000/events")
+  fetch("https://ohasie-1-projects.onrender.com/events")
     .then((res) => res.json())
     .then((data) => {
       const eventsContainer = document.getElementById("eventsContainer");
@@ -64,7 +64,7 @@ function createEvent() {
   const date = document.getElementById("eventDate").value;
   const time = document.getElementById("eventTime").value;
 
-  fetch("http://localhost:3000/events", {
+  fetch("https://ohasie-1-projects.onrender.com/events", {
     method: "POST",
     body: JSON.stringify({
       title,
@@ -91,7 +91,7 @@ function createEvent() {
 }
 
 function deleteEvent(id) {
-  fetch(`http://localhost:3000/events/${id}`, {
+  fetch(`https://ohasie-1-projects.onrender.com/${id}`, {
     method: "DELETE",
   })
     .then((res) => res.json())
@@ -105,7 +105,7 @@ function deleteEvent(id) {
 }
 
 function populateEditForm(id) {
-  fetch(`http://localhost:3000/events/${id}`)
+  fetch(`https://ohasie-1-projects.onrender.com/${id}`)
     .then((res) => res.json())
     .then((data) => {
       document.getElementById("editEventName").value = data.title;
@@ -133,7 +133,7 @@ function updateEvent() {
   const location = document.getElementById("editEventLocation").value;
   const description = document.getElementById("editEventDescription").value;
 
-  fetch(`http://localhost:3000/events/${id}`, {
+  fetch(`https://ohasie-1-projects.onrender.com/${id}`, {
     method: "PUT",
     body: JSON.stringify({
       title,

@@ -32,18 +32,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const username = document.getElementById("signupName").value;
     const email = document.getElementById("signupEmail").value;
     const password = document.getElementById("signupPassword").value;
-    const avatar = `https://api.dicebear.com/6.x/initials/svg?seed=${username.substring(
-      0,
-      2
-    )}&backgroundColor=random`;
 
-    const response = await fetch("http://localhost:3000/users", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ username, email, password, avatar }),
-    });
+    const response = await fetch(
+      "https://ohasie-1-projects.onrender.com/users",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username, email, password, avatar }),
+      }
+    );
 
     if (response.ok) {
       alert("Sign-up successful! You can now log in.");
@@ -58,7 +57,9 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     const email = document.getElementById("loginEmail").value;
     const password = document.getElementById("loginPassword").value;
-    const response = await fetch("http://localhost:3000/users");
+    const response = await fetch(
+      "https://ohasie-1-projects.onrender.com/users"
+    );
     const users = await response.json();
     const user = users.find(
       (user) => user.email === email && user.password === password
@@ -77,4 +78,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 });
-
