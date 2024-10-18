@@ -5,7 +5,6 @@
       "username": "mwangi",
       "email": "mwangi@example.com",
       "password": "password123",
-      "avatar": "https://api.dicebear.com/6.x/initials/svg?seed=MB&backgroundColor=random",
       "events": [
         {
           "id": "1",
@@ -30,7 +29,6 @@
       "username": "jane",
       "email": "jane@example.com",
       "password": "mypassword",
-      "avatar": "https://api.dicebear.com/6.x/initials/svg?seed=JD&backgroundColor=random",
       "events": [
         {
           "id": "2",
@@ -55,7 +53,6 @@
       "username": "Shirleen",
       "email": "shirleen@example.com",
       "password": "shirleenpass",
-      "avatar": "https://api.dicebear.com/6.x/initials/svg?seed=Sh",
       "events": [],
       "notifications": []
     },
@@ -64,7 +61,6 @@
       "username": "abujubuju",
       "email": "abujubuju@example.com",
       "password": "abujubupass",
-      "avatar": "https://api.dicebear.com/6.x/initials/svg?seed=ab",
       "events": [],
       "notifications": []
     },
@@ -72,8 +68,7 @@
       "id": "6be8",
       "username": "kamau",
       "email": "kamau@gmail.com",
-      "password": "12345",
-      "avatar": "https://api.dicebear.com/6.x/initials/svg?seed=ka&backgroundColor=random"
+      "password": "12345"
     }
   ]
 }
